@@ -181,21 +181,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="flexibleSpace" id="U40-FI-8Hs"/>
-                                    <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
-                                    <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
-                                    <barButtonItem title="Album" id="voo-qN-FTp">
-                                        <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="VPM-j6-bA7" id="fjl-lV-Bgj"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="FMu-ju-mFe"/>
-                                </items>
-                            </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-xK-qdx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-xK-qdx">
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-0f-V4B">
@@ -218,10 +204,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="U40-FI-8Hs"/>
+                                    <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
+                                    <barButtonItem title="Album" id="voo-qN-FTp">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="VPM-j6-bA7" id="fjl-lV-Bgj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="FMu-ju-mFe"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3XK-Ai-bgc" firstAttribute="top" secondItem="3uM-LK-C1Z" secondAttribute="bottom" id="28A-YA-bDA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wrN-0f-V4B" secondAttribute="trailing" id="3T6-xx-Zuj"/>
                             <constraint firstItem="3uM-LK-C1Z" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" constant="-16" id="7H4-ZW-MDr"/>
                             <constraint firstItem="OjZ-xK-qdx" firstAttribute="top" secondItem="zH3-3a-Mih" secondAttribute="bottom" id="9ir-8X-KhJ"/>
@@ -229,6 +228,7 @@
                             <constraint firstItem="wrN-0f-V4B" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" id="Bca-t4-bF4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="3uM-LK-C1Z" secondAttribute="trailing" constant="-16" id="CGe-zE-q2r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fHi-2V-9ZC" secondAttribute="trailing" id="EwW-AJ-j3n"/>
+                            <constraint firstItem="3XK-Ai-bgc" firstAttribute="top" secondItem="3uM-LK-C1Z" secondAttribute="bottom" id="GQP-te-mck"/>
                             <constraint firstItem="OjZ-xK-qdx" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" constant="-16" id="LsV-4n-ZkL"/>
                             <constraint firstItem="wrN-0f-V4B" firstAttribute="top" secondItem="zH3-3a-Mih" secondAttribute="bottom" constant="25" id="OYB-t9-ACJ"/>
                             <constraint firstItem="3uM-LK-C1Z" firstAttribute="top" secondItem="OjZ-xK-qdx" secondAttribute="bottom" id="hab-Sr-Bwb"/>
