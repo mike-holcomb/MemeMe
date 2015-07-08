@@ -167,12 +167,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lqC-so-WHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1698" y="-708"/>
+            <point key="canvasLocation" x="1846" y="-710"/>
         </scene>
         <!--Add Meme-->
         <scene sceneID="lay-dx-pyr">
             <objects>
-                <viewController title="Add Meme" id="VPM-j6-bA7" sceneMemberID="viewController">
+                <viewController title="Add Meme" id="VPM-j6-bA7" customClass="AddMemeViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zH3-3a-Mih"/>
                         <viewControllerLayoutGuide type="bottom" id="3XK-Ai-bgc"/>
@@ -184,27 +184,69 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="U40-FI-8Hs"/>
                                     <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
                                     <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
-                                    <barButtonItem title="Album" id="voo-qN-FTp"/>
+                                    <barButtonItem title="Album" id="voo-qN-FTp">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="VPM-j6-bA7" id="fjl-lV-Bgj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="FMu-ju-mFe"/>
                                 </items>
                             </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-xK-qdx">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-0f-V4B">
+                                <rect key="frame" x="16" y="89" width="568" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Cnv-mp-dBZ"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fHi-2V-9ZC">
+                                <rect key="frame" x="16" y="491" width="568" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="ISE-zN-ajz"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="3uM-LK-C1Z" secondAttribute="trailing" constant="-16" id="DP7-yk-Iki"/>
-                            <constraint firstItem="3uM-LK-C1Z" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" constant="-16" id="GBY-mO-rfO"/>
-                            <constraint firstItem="3XK-Ai-bgc" firstAttribute="top" secondItem="3uM-LK-C1Z" secondAttribute="bottom" id="Wx8-Rb-Pnh"/>
+                            <constraint firstItem="3XK-Ai-bgc" firstAttribute="top" secondItem="3uM-LK-C1Z" secondAttribute="bottom" id="28A-YA-bDA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wrN-0f-V4B" secondAttribute="trailing" id="3T6-xx-Zuj"/>
+                            <constraint firstItem="3uM-LK-C1Z" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" constant="-16" id="7H4-ZW-MDr"/>
+                            <constraint firstItem="OjZ-xK-qdx" firstAttribute="top" secondItem="zH3-3a-Mih" secondAttribute="bottom" id="9ir-8X-KhJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OjZ-xK-qdx" secondAttribute="trailing" constant="-16" id="ASe-5K-Dvj"/>
+                            <constraint firstItem="wrN-0f-V4B" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" id="Bca-t4-bF4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3uM-LK-C1Z" secondAttribute="trailing" constant="-16" id="CGe-zE-q2r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fHi-2V-9ZC" secondAttribute="trailing" id="EwW-AJ-j3n"/>
+                            <constraint firstItem="OjZ-xK-qdx" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" constant="-16" id="LsV-4n-ZkL"/>
+                            <constraint firstItem="wrN-0f-V4B" firstAttribute="top" secondItem="zH3-3a-Mih" secondAttribute="bottom" constant="25" id="OYB-t9-ACJ"/>
+                            <constraint firstItem="3uM-LK-C1Z" firstAttribute="top" secondItem="OjZ-xK-qdx" secondAttribute="bottom" id="hab-Sr-Bwb"/>
+                            <constraint firstItem="3uM-LK-C1Z" firstAttribute="top" secondItem="fHi-2V-9ZC" secondAttribute="bottom" constant="25" id="p50-ZY-EaT"/>
+                            <constraint firstItem="fHi-2V-9ZC" firstAttribute="leading" secondItem="n3H-WO-DxS" secondAttribute="leadingMargin" id="tlj-A3-034"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Meme" id="ZbY-LG-0RV">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="9oR-NV-XhQ"/>
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="nUa-wt-7eV"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="OjZ-xK-qdx" id="4YL-vE-m3b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pST-f0-lM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="-708"/>
+            <point key="canvasLocation" x="2524" y="-710"/>
         </scene>
     </scenes>
     <resources>
