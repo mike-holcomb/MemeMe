@@ -181,9 +181,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-xK-qdx">
-                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
-                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="U40-FI-8Hs"/>
+                                    <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
+                                    <barButtonItem title="Album" id="voo-qN-FTp">
+                                        <connections>
+                                            <action selector="pickAnImageFromAlbum:" destination="VPM-j6-bA7" id="fjl-lV-Bgj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="FMu-ju-mFe"/>
+                                </items>
+                            </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrN-0f-V4B">
                                 <rect key="frame" x="16" y="89" width="568" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -204,20 +215,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
-                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                                <items>
-                                    <barButtonItem systemItem="flexibleSpace" id="U40-FI-8Hs"/>
-                                    <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
-                                    <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
-                                    <barButtonItem title="Album" id="voo-qN-FTp">
-                                        <connections>
-                                            <action selector="pickAnImageFromAlbum:" destination="VPM-j6-bA7" id="fjl-lV-Bgj"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem systemItem="flexibleSpace" id="FMu-ju-mFe"/>
-                                </items>
-                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OjZ-xK-qdx">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -238,7 +238,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Meme" id="ZbY-LG-0RV">
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="9oR-NV-XhQ"/>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="nUa-wt-7eV"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="nUa-wt-7eV">
+                            <connections>
+                                <action selector="cancelAction:" destination="VPM-j6-bA7" id="ajb-uj-mYw"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="OjZ-xK-qdx" id="4YL-vE-m3b"/>
