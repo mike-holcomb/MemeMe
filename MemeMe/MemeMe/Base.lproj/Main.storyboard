@@ -8,7 +8,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ZpF-bO-eB3">
             <objects>
-                <tabBarController hidesBottomBarWhenPushed="YES" id="MqS-hd-h3l" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MqS-hd-h3l" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="dSU-P2-gRe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="266" y="-710"/>
         </scene>
-        <!--View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="twc-6W-ZNr">
             <objects>
-                <viewController id="YRK-C3-gG1" sceneMemberID="viewController">
+                <viewController id="YRK-C3-gG1" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnk-g3-CGj"/>
                         <viewControllerLayoutGuide type="bottom" id="mu8-h4-Ugt"/>
@@ -68,18 +68,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vQR-Od-h0V">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="vQR-Od-h0V">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="xSA-Q7-idd"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dac-Jy-SbG">
                             <connections>
-                                <segue destination="VPM-j6-bA7" kind="show" identifier="tableToNew" id="oR2-6p-N14"/>
+                                <segue destination="2qZ-sa-BIh" kind="presentation" id="ft4-HV-ghQ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hwC-BK-XE0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-708"/>
+            <point key="canvasLocation" x="1026" y="-708"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oNA-GV-Wec">
@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="266" y="130"/>
         </scene>
-        <!--View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="rWc-hI-WE1">
             <objects>
-                <viewController id="bTX-J9-NUH" sceneMemberID="viewController">
+                <viewController id="bTX-J9-NUH" customClass="ViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EoS-oc-40P"/>
                         <viewControllerLayoutGuide type="bottom" id="NYX-Og-H6k"/>
@@ -140,11 +140,11 @@
                             <constraint firstItem="NYX-Og-H6k" firstAttribute="top" secondItem="XPM-UM-BkO" secondAttribute="bottom" id="gT2-1H-IXZ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BEI-fF-fTm">
+                    <navigationItem key="navigationItem" title="Sent Memes" id="BEI-fF-fTm">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="ahm-EZ-x9C"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FlD-j0-kAj">
                             <connections>
-                                <segue destination="VPM-j6-bA7" kind="show" identifier="collectionToNew" id="Jcg-C2-1Os"/>
+                                <segue destination="2qZ-sa-BIh" kind="presentation" id="n1U-Ko-Mm5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -152,6 +152,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKJ-3N-yst" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968" y="142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0lH-fb-cJb">
+            <objects>
+                <navigationController id="2qZ-sa-BIh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4CI-fO-1Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="VPM-j6-bA7" kind="relationship" relationship="rootViewController" id="mSd-CG-Dlu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqC-so-WHd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698" y="-708"/>
         </scene>
         <!--Add Meme-->
         <scene sceneID="lay-dx-pyr">
@@ -166,11 +182,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uM-LK-C1Z">
-                                <rect key="frame" x="0.0" y="507" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="camera" id="B5h-8v-2hu"/>
-                                    <barButtonItem width="30" systemItem="fixedSpace" id="1B5-az-czJ"/>
-                                    <barButtonItem title="From Album" id="voo-qN-FTp"/>
+                                    <barButtonItem systemItem="flexibleSpace" id="1B5-az-czJ"/>
+                                    <barButtonItem title="Album" id="voo-qN-FTp"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -181,11 +197,14 @@
                             <constraint firstItem="3XK-Ai-bgc" firstAttribute="top" secondItem="3uM-LK-C1Z" secondAttribute="bottom" id="Wx8-Rb-Pnh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Meme" id="ZbY-LG-0RV"/>
+                    <navigationItem key="navigationItem" title="Add Meme" id="ZbY-LG-0RV">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="9oR-NV-XhQ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="nUa-wt-7eV"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pST-f0-lM0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="-248"/>
+            <point key="canvasLocation" x="2364" y="-708"/>
         </scene>
     </scenes>
     <resources>
@@ -193,6 +212,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jcg-C2-1Os"/>
+        <segue reference="n1U-Ko-Mm5"/>
     </inferredMetricsTieBreakers>
 </document>
