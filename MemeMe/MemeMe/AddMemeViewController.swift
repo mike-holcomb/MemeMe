@@ -19,8 +19,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     
-    let topDefault: String = "TOP"
-    let bottomDefault: String = "BOTTOM"
+    let topDefaultText: String = "TOP"
+    let bottomDefaultText: String = "BOTTOM"
     var memedImage: UIImage!
     
     let memeTextAttributes = [
@@ -35,18 +35,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topTextField.text = topDefault
-        topTextField.delegate = self
-        topTextField.defaultTextAttributes = memeTextAttributes
-        topTextField.textAlignment = NSTextAlignment.Center
-        topTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        
-        bottomTextField.text = bottomDefault
-        bottomTextField.delegate = self
-        bottomTextField.defaultTextAttributes = memeTextAttributes
-        bottomTextField.textAlignment = NSTextAlignment.Center
-        bottomTextField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
-        
+        self.setDefaultTextFieldSettings(topTextField, defaultText: topDefaultText)
+        self.setDefaultTextFieldSettings(bottomTextField, defaultText: bottomDefaultText)
         
     }
 
@@ -67,6 +57,15 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.unsubscribeToKeyboardNotifications()
     }
     
+    /** Sets default text formatting and text for text field with given defaultText string */
+    func setDefaultTextFieldSettings(textField: UITextField, defaultText: String){
+        textField.text = defaultText
+        textField.delegate = self
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = NSTextAlignment.Center
+        textField.autocapitalizationType = UITextAutocapitalizationType.AllCharacters
+        textField.minimumFontSize = 10
+    }
     
     /** IMAGE PICKING FUNCTIONS **/
     
@@ -101,7 +100,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     /** TEXTFIELD/KEYBOARD FUNCTIONS **/
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == topDefault || textField.text == bottomDefault {
+        if textField.text == topDefaultText || textField.text == bottomDefaultText {
             textField.text = ""
         }
         textField.becomeFirstResponder()
