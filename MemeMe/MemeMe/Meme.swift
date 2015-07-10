@@ -22,4 +22,7 @@ class Meme: AnyObject  {
         self.memeImage = memeImage!
     }
     
+    func description() -> String{
+        return topString + " " + bottomString
+    }
 }

@@ -147,7 +147,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
                      bottomString: bottomTextField.text,
                      image:        imageView.image,
                      memeImage:    memedImage)
-        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage()-> UIImage {
@@ -174,7 +175,10 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func shareAction(sender: AnyObject) {
         self.memedImage  = generateMemedImage()
         let activityViewController = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
-        activityViewController.completionWithItemsHandler = { (activity, success, items, error) in self.save() }
+        activityViewController.completionWithItemsHandler = { (activity, success, items, error) in
+            self.save()
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
         
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
