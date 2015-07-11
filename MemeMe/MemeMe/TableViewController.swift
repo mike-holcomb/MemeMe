@@ -11,10 +11,6 @@ import UIKit
 class TableViewController: ViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,8 +32,7 @@ class TableViewController: ViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.row)
-        
+        self.pushDetailViewController(indexPath.row)
     }
     
 }

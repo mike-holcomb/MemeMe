@@ -19,8 +19,6 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
     
-    let topDefaultText: String = "TOP"
-    let bottomDefaultText: String = "BOTTOM"
     var memedImage: UIImage!
     
     let memeTextAttributes = [
@@ -35,8 +33,8 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setDefaultTextFieldSettings(topTextField, defaultText: topDefaultText)
-        self.setDefaultTextFieldSettings(bottomTextField, defaultText: bottomDefaultText)
+        self.setDefaultTextFieldSettings(topTextField, defaultText: Meme.topDefaultText)
+        self.setDefaultTextFieldSettings(bottomTextField, defaultText: Meme.bottomDefaultText)
         
     }
 
@@ -100,7 +98,7 @@ class AddMemeViewController: UIViewController, UIImagePickerControllerDelegate, 
     /** TEXTFIELD/KEYBOARD FUNCTIONS **/
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        if textField.text == topDefaultText || textField.text == bottomDefaultText {
+        if textField.text == Meme.topDefaultText || textField.text == Meme.bottomDefaultText {
             textField.text = ""
         }
         textField.becomeFirstResponder()

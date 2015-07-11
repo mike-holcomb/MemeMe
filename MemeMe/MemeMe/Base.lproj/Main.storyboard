@@ -8,9 +8,9 @@
         <!--Tab Bar Controller-->
         <scene sceneID="ZpF-bO-eB3">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MqS-hd-h3l" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="MqS-hd-h3l" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="dSU-P2-gRe">
+                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="dSU-P2-gRe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -27,11 +27,11 @@
             </objects>
             <point key="canvasLocation" x="-426" y="-218"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--TableNav-->
         <scene sceneID="ezL-Wl-oYs">
             <objects>
-                <navigationController id="Mcu-N1-iiB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="table" id="VFn-uF-RRn"/>
+                <navigationController title="TableNav" id="Mcu-N1-iiB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title=" " image="table" id="VFn-uF-RRn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="kIy-K0-xia">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,22 +45,23 @@
             </objects>
             <point key="canvasLocation" x="266" y="-710"/>
         </scene>
-        <!--Sent Memes-->
+        <!--SentMemesTable-->
         <scene sceneID="twc-6W-ZNr">
             <objects>
-                <viewController id="YRK-C3-gG1" customClass="TableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SentMemesTable" id="YRK-C3-gG1" customClass="TableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wnk-g3-CGj"/>
                         <viewControllerLayoutGuide type="bottom" id="mu8-h4-Ugt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="x5z-gM-jss">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zab-pK-Ehl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memeTableCell" textLabel="rfX-Ng-Ifm" rowHeight="85" style="IBUITableViewCellStyleDefault" id="D4S-KJ-Bq8">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -86,9 +87,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="vQR-Od-h0V">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="xSA-Q7-idd">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dac-Jy-SbG">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -104,16 +102,20 @@
             </objects>
             <point key="canvasLocation" x="1026" y="-708"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--CollectionNav-->
         <scene sceneID="oNA-GV-Wec">
             <objects>
-                <navigationController id="vHf-nj-YTb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="collection" id="6SC-zM-vWy"/>
+                <navigationController title="CollectionNav" id="vHf-nj-YTb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title=" " image="collection" id="6SC-zM-vWy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="xae-5h-nRx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Klx-ns-oI5">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="bTX-J9-NUH" kind="relationship" relationship="rootViewController" id="lpl-cO-yUv"/>
                     </connections>
@@ -122,16 +124,16 @@
             </objects>
             <point key="canvasLocation" x="266" y="130"/>
         </scene>
-        <!--Sent Memes-->
+        <!--SentMemesCollection-->
         <scene sceneID="rWc-hI-WE1">
             <objects>
-                <viewController id="bTX-J9-NUH" customClass="CollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SentMemesCollection" id="bTX-J9-NUH" customClass="CollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EoS-oc-40P"/>
                         <viewControllerLayoutGuide type="bottom" id="NYX-Og-H6k"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PUE-Hm-Ot7">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XPM-UM-BkO">
@@ -151,7 +153,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfm-xc-Oby">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dfm-xc-Oby">
                                                     <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 </imageView>
                                             </subviews>
@@ -177,9 +179,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="BEI-fF-fTm">
-                        <barButtonItem key="backBarButtonItem" title="Cancel" id="ahm-EZ-x9C">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FlD-j0-kAj">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -202,6 +201,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="4CI-fO-1Ba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
@@ -314,69 +314,40 @@
             </objects>
             <point key="canvasLocation" x="2524" y="-710"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3kr-QL-Sgf">
-            <objects>
-                <navigationController id="vpP-xG-afq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mFB-kc-V5d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="A6g-Yb-NSq" kind="relationship" relationship="rootViewController" id="xX6-NC-yiu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5AP-wb-2zP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1846" y="158"/>
-        </scene>
-        <!--View Meme-->
+        <!--Detail View Controller-->
         <scene sceneID="Zp0-D0-tRr">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kem-MU-9js" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController title="View Meme" id="A6g-Yb-NSq" customClass="DetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="memeDetailView" hidesBottomBarWhenPushed="YES" id="A6g-Yb-NSq" customClass="DetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yMI-wF-E8U"/>
                         <viewControllerLayoutGuide type="bottom" id="nME-Vt-6QB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cQY-im-96j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GaI-Yw-l9j">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="492"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="nME-Vt-6QB" firstAttribute="top" secondItem="GaI-Yw-l9j" secondAttribute="bottom" id="34z-lZ-NhZ"/>
                             <constraint firstItem="GaI-Yw-l9j" firstAttribute="leading" secondItem="cQY-im-96j" secondAttribute="leadingMargin" constant="-16" id="5yw-UZ-ULK"/>
                             <constraint firstItem="GaI-Yw-l9j" firstAttribute="top" secondItem="yMI-wF-E8U" secondAttribute="bottom" id="Cpi-dc-axk"/>
-                            <constraint firstItem="nME-Vt-6QB" firstAttribute="top" secondItem="GaI-Yw-l9j" secondAttribute="bottom" id="PiS-rt-UcR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GaI-Yw-l9j" secondAttribute="trailing" constant="-16" id="RgD-Rb-6Wa"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Meme" id="RVX-BV-5Tk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="8c2-DY-plU">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="shareAction:" destination="A6g-Yb-NSq" id="oki-4c-Z9T"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="vSH-sZ-HHv">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="cancelAction:" destination="A6g-Yb-NSq" id="d6s-zY-5z1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="imageView" destination="GaI-Yw-l9j" id="4Gc-I4-rgP"/>
-                        <outlet property="shareButton" destination="8c2-DY-plU" id="zxe-kh-8kb"/>
+                        <outlet property="memeImageView" destination="GaI-Yw-l9j" id="ZhS-br-cmY"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2524" y="158"/>
+            <point key="canvasLocation" x="1816" y="142"/>
         </scene>
     </scenes>
     <resources>
@@ -384,6 +355,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ft4-HV-ghQ"/>
+        <segue reference="n1U-Ko-Mm5"/>
     </inferredMetricsTieBreakers>
 </document>

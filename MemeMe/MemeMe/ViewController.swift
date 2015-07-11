@@ -8,26 +8,29 @@
 
 import UIKit
 
+/** Custom Parent ViewController class including common implementations for data management */
 class ViewController: UIViewController {
     
     var memes: [Meme]!
-
+    var appDelegate: AppDelegate!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+        self.appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         memes = appDelegate.memes
         
     }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let nextViewController = segue.destinationViewController as! UIViewController
-        nextViewController.hidesBottomBarWhenPushed = true
     
+    func pushDetailViewController(memeIndex: Int){
+        let memeDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("memeDetailView") as! DetailViewController
+        memeDetailViewController.memeIndex = memeIndex
+        
+        self.navigationController?.pushViewController(memeDetailViewController, animated: true)
     }
 
 

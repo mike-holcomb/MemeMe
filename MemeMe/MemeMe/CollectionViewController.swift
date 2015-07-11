@@ -14,6 +14,7 @@ class CollectionViewController: ViewController, UICollectionViewDelegate, UIColl
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
+        self.tabBarController?.tabBarItem.title = ""
         
     }
     
@@ -28,6 +29,10 @@ class CollectionViewController: ViewController, UICollectionViewDelegate, UIColl
         cell.imageView?.image = meme.memeImage
         
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        pushDetailViewController(indexPath.row)
     }
 
 }
